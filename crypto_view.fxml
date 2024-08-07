@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.cryptodata.CryptoController"
+            prefHeight="600.0" prefWidth="800.0"
+            stylesheets="@crypto_style.css">
+
+    <VBox alignment="CENTER" spacing="20.0" layoutX="50.0" layoutY="50.0">
+        <Label text="Cryptocurrency Data" styleClass="header-label" />
+
+        <!-- Search Bar -->
+        <HBox spacing="10.0">
+            <TextField fx:id="searchField" promptText="Enter cryptocurrency key" styleClass="search-field"/>
+            <Button text="Search" onAction="#handleSearch" styleClass="search-button"/>
+        </HBox>
+
+        <Label fx:id="keyLabel" text="Key: " styleClass="data-label"/>
+        <Label fx:id="holderCountLabel" text="Holder Count: " styleClass="data-label"/>
+        <Label fx:id="dailyActiveLabel" text="Daily Active: " styleClass="data-label"/>
+        <Label fx:id="totalLabel" text="Total: " styleClass="data-label"/>
+
+        <!-- Error Label -->
+        <Label fx:id="errorLabel" text="" styleClass="error-label"/>
+
+        <!-- Progress Indicator -->
+        <ProgressIndicator fx:id="progressIndicator" visible="false"/>
+    </VBox>
+
+</AnchorPane>
